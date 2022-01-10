@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "daily-horoscope-app": "apps/daily-horoscope-app",
+    "daily-horoscope-app-e2e": "apps/daily-horoscope-app-e2e"
+  }
+}
