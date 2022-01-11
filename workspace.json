@@ -2,6 +2,15 @@
   "version": 2,
   "projects": {
     "daily-horoscope-app": "apps/daily-horoscope-app",
-    "daily-horoscope-app-e2e": "apps/daily-horoscope-app-e2e"
+    "daily-horoscope-app-e2e": "apps/daily-horoscope-app-e2e",
+    "daily-horoscope-web": {
+      "root": "apps/daily-horoscope-web",
+      "webpackConfig": "apps/daily-horoscope-web/webpack.js"
+    },
+    "daily-horoscope-web-e2e": "apps/daily-horoscope-web-e2e",
+    "models": "libs/models",
+    "services": "libs/services",
+    "store": "libs/store",
+    "ui": "libs/ui"
   }
 }

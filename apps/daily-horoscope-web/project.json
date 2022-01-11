@@ -1,0 +1,73 @@
+{
+  "root": "apps/daily-horoscope-web",
+  "sourceRoot": "apps/daily-horoscope-web/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/daily-horoscope-web",
+        "index": "apps/daily-horoscope-web/src/index.html",
+        "baseHref": "/",
+        "main": "apps/daily-horoscope-web/src/main.tsx",
+        "polyfills": "apps/daily-horoscope-web/src/polyfills.ts",
+        "tsConfig": "apps/daily-horoscope-web/tsconfig.app.json",
+        "assets": [
+          "apps/daily-horoscope-web/src/favicon.ico",
+          "apps/daily-horoscope-web/src/assets"
+        ],
+        "styles": ["apps/daily-horoscope-web/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/daily-horoscope-web/src/environments/environment.ts",
+              "with": "apps/daily-horoscope-web/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "daily-horoscope-web:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "daily-horoscope-web:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/daily-horoscope-web/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/daily-horoscope-web"],
+      "options": {
+        "jestConfig": "apps/daily-horoscope-web/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

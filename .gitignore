@@ -96,3 +96,15 @@ buck-out/
 node_modules/
 
 apps/daily-horoscope-app-e2e/artifacts
+## Nested node_modules
+
+node_modules/
+## Nested node_modules
+
+node_modules/
+## Nested node_modules
+
+node_modules/
+## Nested node_modules
+
+node_modules/
