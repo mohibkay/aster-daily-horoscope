@@ -17,6 +17,9 @@
     "paths": {
       "@aster-daily-horoscope/models": ["libs/models/src/index.ts"],
       "@aster-daily-horoscope/services": ["libs/services/src/index.ts"],
+      "@aster-daily-horoscope/shared-components": [
+        "libs/shared-components/src/index.ts"
+      ],
       "@aster-daily-horoscope/store": ["libs/store/src/index.ts"],
       "@aster-daily-horoscope/ui": ["libs/ui/src/index.ts"]
     }

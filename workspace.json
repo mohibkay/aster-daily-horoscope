@@ -8,8 +8,113 @@
       "webpackConfig": "apps/daily-horoscope-web/webpack.js"
     },
     "daily-horoscope-web-e2e": "apps/daily-horoscope-web-e2e",
+    "hotelsweb": {
+      "root": "apps/hotelsweb",
+      "sourceRoot": "apps/hotelsweb",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "root": "apps/hotelsweb",
+            "outputPath": "dist/apps/hotelsweb"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "hotelsweb:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "hotelsweb:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "hotelsweb:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/hotelsweb"],
+          "options": {
+            "jestConfig": "apps/hotelsweb/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/hotelsweb/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "hotelsweb-e2e": {
+      "root": "apps/hotelsweb-e2e",
+      "sourceRoot": "apps/hotelsweb-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/hotelsweb-e2e/cypress.json",
+            "devServerTarget": "hotelsweb:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hotelsweb:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/hotelsweb-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["hotelsweb"]
+    },
     "models": "libs/models",
     "services": "libs/services",
+    "shared-components": {
+      "root": "libs/shared-components",
+      "sourceRoot": "libs/shared-components/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared-components/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared-components"],
+          "options": {
+            "jestConfig": "libs/shared-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "store": "libs/store",
     "ui": "libs/ui"
   }
