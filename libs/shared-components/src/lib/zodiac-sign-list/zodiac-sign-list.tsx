@@ -21,7 +21,7 @@ export function ZodiacSignList({setUserZodiacSignItem}: ZodiacSignListProps) {
       {AdhZodiacSignList.map(item => {
         return (
           <div key={item.zodiacSign} className='border-b'>
-            <li className='cursor-pointer p-2 hover:text-blue-500 hover:shadow text-xl' onClick={() => handleZodiacItemClick(item)}>{item.zodiacSign}</li>
+            <li className='cursor-pointer p-2 px-0 hover:text-blue-500 hover:shadow text-xl' onClick={() => handleZodiacItemClick(item)}>{item.zodiacSign}</li>
           </div>
         )
       }) }

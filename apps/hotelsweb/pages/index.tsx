@@ -2,15 +2,9 @@ import { ZodiacSignListContainer } from '@aster-daily-horoscope/shared-component
 
 export function Index() {
   return (
-    <div className='bg-blue-500'>
-      <div className="">
-        <div className="">
-          <div>
-            <h1 className='text-3xl px-8 py-4 mx-auto w-2/3'>Daily Horoscope</h1>
-          <ZodiacSignListContainer />
-          </div>
-        </div>
-      </div>
+    <div className="bg-green-300">
+      <h1 className='text-3xl px-8 py-8 mt-8 mx-auto w-2/3'>Daily Horoscope</h1>
+      <ZodiacSignListContainer />
     </div>
   );
 }
