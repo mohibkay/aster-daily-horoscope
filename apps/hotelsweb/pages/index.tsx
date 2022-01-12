@@ -1,16 +1,12 @@
-import styles from './index.module.css';
 import { ZodiacSignListContainer } from '@aster-daily-horoscope/shared-components';
 
 export function Index() {
   return (
-    <div className={styles.page}>
-      <div className="wrapper">
-        <div className="container">
-          <div id="welcome">
-            <h1>
-              <span> Hello there, </span>
-              Welcome hotelsweb 👋
-            </h1>
+    <div className='bg-blue-500'>
+      <div className="">
+        <div className="">
+          <div>
+            <h1 className='text-3xl px-8 py-4 mx-auto w-2/3'>Daily Horoscope</h1>
           <ZodiacSignListContainer />
           </div>
         </div>

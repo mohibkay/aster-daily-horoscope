@@ -6,7 +6,7 @@ import { rootStore } from '@aster-daily-horoscope/store'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={ rootStore }>
+    <Provider store={rootStore}>
       <Head>
         <title>Welcome to hotelsweb!</title>
       </Head>

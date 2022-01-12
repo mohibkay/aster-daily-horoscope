@@ -9,19 +9,19 @@ import {
 } from './zodiac-sign-list.props';
 
 
-export function ZodiacSignList() {
+export function ZodiacSignList({setUserZodiacSignItem}: ZodiacSignListProps) {
   const router = useRouter()
   const handleZodiacItemClick = (item: AdhZodiacSignItem) => {
-    console.log(item.zodiacSign)
-    router.push(item.zodiacSign)
+    setUserZodiacSignItem(item)
+    router.push(`${item.zodiacSign}`)
   }
-  
+
   return (
-    <ul>
+    <ul className='px-8 w-2/3 mx-auto'>
       {AdhZodiacSignList.map(item => {
         return (
-          <div key={item.zodiacSign} style={{borderBottom: '1px solid #ddd'}}>
-            <li style={{cursor: 'pointer', padding: '.5rem', listStyle: 'none'}} onClick={() => handleZodiacItemClick(item)}>{item.zodiacSign}</li>
+          <div key={item.zodiacSign} className='border-b'>
+            <li className='cursor-pointer p-2 hover:text-blue-500 hover:shadow text-xl' onClick={() => handleZodiacItemClick(item)}>{item.zodiacSign}</li>
           </div>
         )
       }) }
