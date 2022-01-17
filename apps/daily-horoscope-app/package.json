@@ -20,6 +20,7 @@
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
     "react-native-screens": "*",
-    "redux-persist": "*"
+    "redux-persist": "*",
+    "@testing-library/react": "*"
   }
 }

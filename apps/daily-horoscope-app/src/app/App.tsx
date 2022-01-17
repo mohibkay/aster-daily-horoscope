@@ -1,8 +1,11 @@
-
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { rootStore } from '@aster-daily-horoscope/store'
-import { ZodiacSignListContainer, HoroscopeCardContainer } from '@aster-daily-horoscope/ui';
+import { rootStore } from '@aster-daily-horoscope/store';
+import {
+  ZodiacSignListContainer,
+  HoroscopeCardContainer,
+} from '@aster-daily-horoscope/ui';
+import { UiHeading } from '@aster-daily-horoscope/ui-heading';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -13,8 +16,11 @@ const App = () => {
     <Provider store={rootStore}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Zodiac Sign List" component={ZodiacSignListContainer} />
-          <Stack.Screen name="Horoscope Card" component={HoroscopeCardContainer} />
+          <Stack.Screen name="Zodiac Sign List" component={UiHeading} />
+          <Stack.Screen
+            name="Horoscope Card"
+            component={HoroscopeCardContainer}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

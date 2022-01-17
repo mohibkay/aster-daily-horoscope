@@ -95,12 +95,12 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 
 --apps/
-------daily-horoscope-app
-------daily-horoscope-web
-------nextapp
+------hotels-app (react-native)
+------hotels-web (nextjs)
 --libs/
 ------models
 ------services
 ------store
 ------ui (react-native)
-------shared-components (with nextjs)
+------shared-components (with react)
+

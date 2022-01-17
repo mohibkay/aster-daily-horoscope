@@ -21,7 +21,8 @@
         "libs/shared-components/src/index.ts"
       ],
       "@aster-daily-horoscope/store": ["libs/store/src/index.ts"],
-      "@aster-daily-horoscope/ui": ["libs/ui/src/index.ts"]
+      "@aster-daily-horoscope/ui": ["libs/ui/src/index.ts"],
+      "@aster-daily-horoscope/ui-heading": ["libs/ui-heading/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

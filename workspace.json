@@ -116,6 +116,29 @@
       }
     },
     "store": "libs/store",
-    "ui": "libs/ui"
+    "ui": "libs/ui",
+    "ui-heading": {
+      "root": "libs/ui-heading",
+      "sourceRoot": "libs/ui-heading/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/ui-heading/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-heading"],
+          "options": {
+            "jestConfig": "libs/ui-heading/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
   }
 }
