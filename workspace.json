@@ -3,11 +3,109 @@
   "projects": {
     "daily-horoscope-app": "apps/daily-horoscope-app",
     "daily-horoscope-app-e2e": "apps/daily-horoscope-app-e2e",
-    "daily-horoscope-web": {
-      "root": "apps/daily-horoscope-web",
-      "webpackConfig": "apps/daily-horoscope-web/webpack.js"
-    },
+    "daily-horoscope-web": "apps/daily-horoscope-web",
     "daily-horoscope-web-e2e": "apps/daily-horoscope-web-e2e",
+    "horoscope-react": {
+      "root": "apps/horoscope-react",
+      "sourceRoot": "apps/horoscope-react/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:webpack",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "compiler": "babel",
+            "outputPath": "dist/apps/horoscope-react",
+            "index": "apps/horoscope-react/src/index.html",
+            "baseHref": "/",
+            "main": "apps/horoscope-react/src/main.tsx",
+            "polyfills": "apps/horoscope-react/src/polyfills.ts",
+            "tsConfig": "apps/horoscope-react/tsconfig.app.json",
+            "assets": [
+              "apps/horoscope-react/src/favicon.ico",
+              "apps/horoscope-react/src/assets"
+            ],
+            "styles": ["apps/horoscope-react/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/horoscope-react/src/environments/environment.ts",
+                  "with": "apps/horoscope-react/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "horoscope-react:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "horoscope-react:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/horoscope-react/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/horoscope-react"],
+          "options": {
+            "jestConfig": "apps/horoscope-react/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "horoscope-react-e2e": {
+      "root": "apps/horoscope-react-e2e",
+      "sourceRoot": "apps/horoscope-react-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/horoscope-react-e2e/cypress.json",
+            "devServerTarget": "horoscope-react:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "horoscope-react:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/horoscope-react-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["horoscope-react"]
+    },
     "hotelsweb": {
       "root": "apps/hotelsweb",
       "sourceRoot": "apps/hotelsweb",

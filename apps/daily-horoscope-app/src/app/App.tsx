@@ -5,7 +5,7 @@ import {
   ZodiacSignListContainer,
   HoroscopeCardContainer,
 } from '@aster-daily-horoscope/ui';
-import { UiHeading } from '@aster-daily-horoscope/ui-heading';
+import { UiHeading, Login } from '@aster-daily-horoscope/ui-heading';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -16,7 +16,7 @@ const App = () => {
     <Provider store={rootStore}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Zodiac Sign List" component={UiHeading} />
+          <Stack.Screen name="Zodiac Sign List" component={Login} />
           <Stack.Screen
             name="Horoscope Card"
             component={HoroscopeCardContainer}
